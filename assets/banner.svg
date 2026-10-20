@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0d1b2a" />
+      <stop offset="100%" stop-color="#1b263b" />
+    </linearGradient>
+
+    <!-- Accent Gradient -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <!-- Card Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.6" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <style>
+      .title-text {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        font-size: 44px;
+        fill: #f8fafc;
+        letter-spacing: -0.5px;
+      }
+      .subtitle-text {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        fill: #94a3b8;
+      }
+      .tag-text {
+        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .data-stream {
+        stroke-dasharray: 12, 12;
+        animation: streamMove 20s linear infinite;
+      }
+      .pulse-node {
+        animation: pulseScale 3s ease-in-out infinite;
+      }
+      .orbit-packet {
+        animation: floatPacket 6s ease-in-out infinite alternate;
+      }
+      @keyframes streamMove {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -400; }
+      }
+      @keyframes pulseScale {
+        0%, 100% { transform: scale(1); opacity: 0.8; }
+        50% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 8px #38bdf8); }
+      }
+      @keyframes floatPacket {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-8px); }
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="360" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.12" stroke="#38bdf8" stroke-width="1">
+    <line x1="0" y1="60" x2="1200" y2="60" />
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="120" y1="0" x2="120" y2="360" />
+    <line x1="240" y1="0" x2="240" y2="360" />
+    <line x1="360" y1="0" x2="360" y2="360" />
+    <line x1="480" y1="0" x2="480" y2="360" />
+    <line x1="600" y1="0" x2="600" y2="360" />
+    <line x1="720" y1="0" x2="720" y2="360" />
+    <line x1="840" y1="0" x2="840" y2="360" />
+    <line x1="960" y1="0" x2="960" y2="360" />
+    <line x1="1080" y1="0" x2="1080" y2="360" />
+  </g>
+
+  <!-- Dynamic Data Stream Highway in Background -->
+  <g opacity="0.35">
+    <path class="data-stream" d="M 0 320 C 300 320, 400 290, 700 290 C 950 290, 1050 330, 1200 330" fill="none" stroke="#38bdf8" stroke-width="2.5" />
+    <path class="data-stream" d="M 0 40 C 250 40, 450 75, 750 75 C 1000 75, 1100 35, 1200 35" fill="none" stroke="#818cf8" stroke-width="2" />
+  </g>
+
+  <!-- Ambient Glowing Orbs (Deep Background) -->
+  <circle cx="950" cy="180" r="140" fill="#38bdf8" opacity="0.08" filter="url(#glow)" />
+  <circle cx="150" cy="100" r="120" fill="#c084fc" opacity="0.06" filter="url(#glow)" />
+
+  <!-- Interactive Data Format Architecture Badges / Dynamic Pills in Background Right -->
+  <g class="orbit-packet" transform="translate(860, 65)">
+    <!-- Pill 1: Protobuf -->
+    <rect x="0" y="0" width="130" height="42" rx="21" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.5" />
+    <circle cx="21" cy="21" r="7" fill="#38bdf8" />
+    <text x="38" y="26" fill="#38bdf8" class="tag-text">Protobuf</text>
+  </g>
+
+  <g class="orbit-packet" style="animation-delay: -2s;" transform="translate(1010, 115)">
+    <!-- Pill 2: FlatBuffers -->
+    <rect x="0" y="0" width="145" height="42" rx="21" fill="url(#cardGrad)" stroke="#818cf8" stroke-width="1.5" />
+    <circle cx="21" cy="21" r="7" fill="#818cf8" />
+    <text x="38" y="26" fill="#818cf8" class="tag-text">Zero-Copy</text>
+  </g>
+
+  <g class="orbit-packet" style="animation-delay: -4s;" transform="translate(840, 165)">
+    <!-- Pill 3: Avro -->
+    <rect x="0" y="0" width="150" height="42" rx="21" fill="url(#cardGrad)" stroke="#c084fc" stroke-width="1.5" />
+    <circle cx="21" cy="21" r="7" fill="#c084fc" />
+    <text x="38" y="26" fill="#c084fc" class="tag-text">Apache Avro</text>
+  </g>
+
+  <g class="orbit-packet" style="animation-delay: -1s;" transform="translate(1010, 220)">
+    <!-- Pill 4: MessagePack & CBOR -->
+    <rect x="0" y="0" width="155" height="42" rx="21" fill="url(#cardGrad)" stroke="#34d399" stroke-width="1.5" />
+    <circle cx="21" cy="21" r="7" fill="#34d399" />
+    <text x="38" y="26" fill="#34d399" class="tag-text">MsgPack / CBOR</text>
+  </g>
+
+  <!-- Foreground Title and Branding Header (Always on Top & Crisp) -->
+  <g transform="translate(70, 115)">
+    <!-- Top Micro Category Badge -->
+    <rect x="0" y="0" width="280" height="28" rx="14" fill="#1e293b" stroke="#38bdf8" stroke-width="1" />
+    <circle cx="14" cy="14" r="5" fill="#38bdf8" />
+    <text x="28" y="19" fill="#38bdf8" class="tag-text" font-size="11">HIGH-PERFORMANCE DATA ENCODING</text>
+
+    <!-- Main Title -->
+    <text x="0" y="70" class="title-text">
+      Awesome Data Serialization
+    </text>
+
+    <!-- Subtitle / Value Proposition -->
+    <text x="0" y="108" class="subtitle-text">
+      Curated Binary Protocols, Zero-Copy Engines, Schema Registries &amp; RPC Formats
+    </text>
+
+    <!-- Feature Pillars -->
+    <g transform="translate(0, 140)">
+      <rect x="0" y="0" width="130" height="30" rx="6" fill="#0f172a" stroke="#334155" />
+      <text x="14" y="20" fill="#cbd5e1" font-family="system-ui" font-size="13">⚡ Microsecond I/O</text>
+
+      <rect x="145" y="0" width="145" height="30" rx="6" fill="#0f172a" stroke="#334155" />
+      <text x="14" y="20" transform="translate(145, 0)" fill="#cbd5e1" font-family="system-ui" font-size="13">🛡️ Schema Evolution</text>
+
+      <rect x="305" y="0" width="145" height="30" rx="6" fill="#0f172a" stroke="#334155" />
+      <text x="14" y="20" transform="translate(305, 0)" fill="#cbd5e1" font-family="system-ui" font-size="13">🌐 Polyglot Support</text>
+    </g>
+  </g>
+
+  <!-- Border Accent Outline -->
+  <rect x="1" y="1" width="1198" height="358" rx="15" fill="none" stroke="url(#accentGrad)" stroke-width="1.5" opacity="0.6" />
+</svg>
