@@ -44,9 +44,12 @@ Contributions welcome! Open a PR to add/update entries. Keep descriptions factua
 
 
 
-- **Managed Schema Registries** (Confluent Schema Registry, AWS Glue Schema Registry, Azure Schema Registry)  
-
-  Managed services for storing and versioning Avro, Protobuf, and JSON schemas with compatibility enforcement. **Best for**: organizations using managed Kafka or event streaming platforms that need centralized schema governance without operating their own registry.
+| Platform | Description | Pricing | Free Tier / Trial Limits |
+| :--- | :--- | :--- | :--- |
+| **[Confluent Cloud Schema Registry](https://www.confluent.io/confluent-cloud/pricing/)** | Fully managed Apache Kafka schema registry supporting Avro, Protobuf, and JSON Schema with automated evolution checks. | Stream Governance Essentials tier: $0 base, $0.002 per schema/hour for schemas beyond the included limit; Advanced tier: starts at $1.00/hour (~$730/month) for up to 20,000 schemas. | Free forever tier includes first 100 schemas per environment at $0/month. New signups also get $400 in free Confluent Cloud credits for the first 30 days. |
+| **[AWS Glue Schema Registry](https://aws.amazon.com/glue/features/schema-registry/)** | Serverless schema management service integrated with Amazon MSK, Amazon Kinesis, Kafka, and Apache Flink. | $0.00 (included at no additional charge; users only pay for any associated downstream streaming/catalog resources used). | Free forever: Service quota includes up to 100 schema registries and up to 10,000 schema versions per AWS region per account at no charge. |
+| **[Azure Event Hubs Schema Registry](https://azure.microsoft.com/pricing/details/event-hubs/)** | Centralized repository for schema documents in Azure Event Hubs with support for Avro, Protobuf, and JSON schemas. | Included at no extra fee with Event Hubs Standard tier starting at $0.03/hour (~$22.32/month) per Throughput Unit (TU) plus $0.028 per million ingress events. | 30-day free trial via Azure Free Account offering $200 in cloud credits; Standard tier namespace includes up to 25 schema versions across 1 custom schema group (25 MB max registry storage). |
+| **[Buf Schema Registry (BSR)](https://buf.build/pricing)** | Managed registry and governance platform tailored for Protocol Buffers, providing dependency management, code generation, and linting. | Teams tier starts at $0.50 per Protobuf type/month for unlimited private repositories; Pro tier starts at $5.00 per type/month ($3,000/month minimum spend). | Free Community plan includes unlimited public repositories with unlimited types and collaborators, plus 1 private repository capped at 100 Protobuf types. |
 
 
 
